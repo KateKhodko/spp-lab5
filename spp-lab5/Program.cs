@@ -8,7 +8,7 @@ namespace spp_lab5
     {
         static void Main(string[] args)
         {
-            string path = "C:\\developing\\projects\\С#\\Test\\Test\\bin\\Debug\\net5.0\\Test.dll";
+            string path = "Test.dll";
             
             Assembly.LoadFrom(path).GetTypes()
                 .Where(type => type.IsPublic)
