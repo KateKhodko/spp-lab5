@@ -8,13 +8,28 @@ namespace spp_lab5
     {
         static void Main(string[] args)
         {
-            string path = "Test.dll";
-            
+            string path = Assembly.GetExecutingAssembly().Location;
+
             Assembly.LoadFrom(path).GetTypes()
                 .Where(type => type.IsPublic)
                 .OrderBy(type => type.FullName)
                 .ToList()
                 .ForEach(type => Console.WriteLine(type.FullName));
         }
+    }
+}
+
+namespace A
+{
+    public class Hello
+    {
+    }
+
+    class A
+    {
+    }
+
+    public class B
+    {
     }
 }
